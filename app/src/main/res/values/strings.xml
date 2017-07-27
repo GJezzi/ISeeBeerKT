@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">I See Beer</string>
+
+    <string name="places_api_key">AIzaSyC70ymGtAQYdILpJsaZ3wpHj0xkpS1UvVE</string>
+    <string name="location_name_text_view">Location Name</string>
+    <string name="location_address_text_view">Location Address</string>
+</resources>

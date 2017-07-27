@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_number": "383980190735",
+    "project_id": "iseebeer-168012"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383980190735:android:dd0ae5bc48d65861",
+        "android_client_info": {
+          "package_name": "com.example.android.iseebeer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "383980190735-v4a7nu1mslmelm84j81ojovguntleg2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.iseebeer",
+            "certificate_hash": "a547c7c2819d4611c17f5ab682150e6053846f85"
+          }
+        },
+        {
+          "client_id": "383980190735-kdnn4o8s0p81mghk9ldvckopq2dseotr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0EjdbQgGO492f44Urgz8Xh2VNBfK8rEI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-99612460-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
