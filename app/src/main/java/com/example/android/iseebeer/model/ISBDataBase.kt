@@ -1,4 +1,4 @@
-package com.example.android.iseebeer.data
+package com.example.android.iseebeer.model
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase

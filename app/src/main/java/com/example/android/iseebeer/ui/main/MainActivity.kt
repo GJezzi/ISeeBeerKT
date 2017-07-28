@@ -40,10 +40,6 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, G
         placesRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         fab.setOnClickListener{
-//            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//                Toast.makeText(this, "Permission Granted!", Toast.LENGTH_SHORT).show()
-//            }
-
             val builder = PlacePicker.IntentBuilder()
             val intent: Intent = builder.build(this)
             startActivityForResult(intent, PLACE_PICKER_REQUEST)
@@ -60,10 +56,6 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, G
             placesRecyclerView.adapter = adapter
             places.add(place)
             adapter.notifyDataSetChanged()
-
-//            Toast.makeText(this, "Place: " + place.name, Toast.LENGTH_SHORT).show()
-//            Toast.makeText(this, "Address: " + place.address, Toast.LENGTH_SHORT).show()
-
 
         } else {
             super.onActivityResult(requestCode, resultCode, data)

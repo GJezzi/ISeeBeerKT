@@ -1,4 +1,4 @@
-package com.example.android.iseebeer.data
+package com.example.android.iseebeer.model
 
 import android.arch.persistence.room.*
 import com.google.android.gms.location.places.Place

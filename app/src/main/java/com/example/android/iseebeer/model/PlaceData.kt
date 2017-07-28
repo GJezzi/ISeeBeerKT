@@ -1,4 +1,4 @@
-package com.example.android.iseebeer.data
+package com.example.android.iseebeer.model
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity

@@ -3,8 +3,7 @@ package com.example.android.iseebeer
 import android.app.Activity
 import android.app.Application
 import android.arch.persistence.room.Room
-import com.example.android.iseebeer.data.ISBDataBase
-import com.example.android.iseebeer.data.PlaceData
+import com.example.android.iseebeer.model.ISBDataBase
 import com.example.android.iseebeer.di.AppComponent
 import com.example.android.iseebeer.di.DaggerAppComponent
 import com.google.android.gms.location.places.Place
