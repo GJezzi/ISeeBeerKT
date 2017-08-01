@@ -1,4 +1,4 @@
-package com.example.android.iseebeer.di
+package com.example.android.iseebeer.di.module
 
 import com.example.android.iseebeer.ISBApp
 import dagger.Module

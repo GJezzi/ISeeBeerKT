@@ -1,12 +1,11 @@
-package com.example.android.iseebeer.model
+package com.example.android.iseebeer.data.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
+import com.example.android.iseebeer.data.model.PlaceInfo
 
-@Database(entities = arrayOf(PlaceData::class), version = 1)
+@Database(entities = arrayOf(PlaceInfo::class), version = 1)
 abstract class ISBDataBase : RoomDatabase() {
-
-    val DATABASE_NAME: String = "isb_database"
 
     abstract fun placeDao(): PlaceDao
 

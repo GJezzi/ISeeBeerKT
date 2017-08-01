@@ -1,14 +1,13 @@
-package com.example.android.iseebeer.model
+package com.example.android.iseebeer.data.model
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
-@Entity (tableName = "isb_database")
-class PlaceData (
-
-        @PrimaryKey(autoGenerate = true)
-        val placeId: Long = 0,
+@Entity (tableName = "places")
+data class PlaceInfo(
+        @PrimaryKey
+        val placeId: String,
 
         @ColumnInfo(name = "place_name")
         val placeName: String,
@@ -16,5 +15,3 @@ class PlaceData (
         @ColumnInfo(name = "place_address")
         val placeAddress: String
 )
-
-

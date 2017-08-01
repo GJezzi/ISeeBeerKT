@@ -1,6 +1,7 @@
-package com.example.android.iseebeer.di
+package com.example.android.iseebeer.di.component
 
 import com.example.android.iseebeer.ISBApp
+import com.example.android.iseebeer.di.module.AppModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
@@ -13,5 +14,5 @@ import javax.inject.Singleton
 
 interface AppComponent : AndroidInjector<ISBApp> {
 
-    //fun inject(isbApp: ISBApp)
+    override fun inject(isbApp: ISBApp)
 }

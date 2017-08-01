@@ -1,4 +1,4 @@
-package com.example.android.iseebeer.ui.main
+package com.example.android.iseebeer.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import com.example.android.iseebeer.ISBApp
 import com.example.android.iseebeer.R
-import com.example.android.iseebeer.adapater.PlaceAdapter
+import com.example.android.iseebeer.adapter.PlaceAdapter
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.LocationServices
@@ -15,16 +16,12 @@ import com.google.android.gms.location.places.Place
 import com.google.android.gms.location.places.Places
 import com.google.android.gms.location.places.ui.PlacePicker
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     val LOG_TAG: String = "MainActivity"
     val GOOGLE_API_CLIENT_ID: Int = 1
     val PLACE_PICKER_REQUEST: Int = 1001
-
-    @Inject
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +52,11 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, G
 
             placesRecyclerView.adapter = adapter
             places.add(place)
+
+            ISBApp.database?.placeDao()?.insert()
+
             adapter.notifyDataSetChanged()
+
 
         } else {
             super.onActivityResult(requestCode, resultCode, data)
