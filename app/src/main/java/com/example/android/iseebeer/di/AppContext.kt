@@ -1,7 +1,8 @@
 package com.example.android.iseebeer.di
 
-/**
- * Created by gjezzi on 02/08/17.
- */
+import com.example.android.iseebeer.di.component.AppComponent
+
 object AppContext {
+
+    lateinit var appComponent: AppComponent
 }
