@@ -12,12 +12,10 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(
         RoomModule::class,
         AppModule::class))
-
 interface AppComponent : AndroidInjector<ISBApp> {
 
     override fun inject(isbApp: ISBApp)
 
     fun inject(mainActivity: MainActivity)
-
 
 }

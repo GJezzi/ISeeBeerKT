@@ -5,13 +5,16 @@ import android.content.Context
 import com.example.android.iseebeer.data.database.ISBDataBase
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
 class RoomModule {
 
     @Provides
-    fun providesDatabase(context: Context): ISBDataBase = Room.databaseBuilder(context, ISBDataBase::class.java,"places").build()
+    @Singleton
+    fun provideDatabase(context: Context): ISBDataBase = Room.databaseBuilder(context, ISBDataBase::class.java,"places").build()
 
     @Provides
-    fun providesPlaceDao(isbDataBase: ISBDataBase) = isbDataBase.placeDao()
+    @Singleton
+    fun providePlaceDao(isbDataBase: ISBDataBase) = isbDataBase.placeDao()
 }

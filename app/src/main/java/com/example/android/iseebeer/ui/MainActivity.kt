@@ -11,6 +11,8 @@ import com.example.android.iseebeer.adapter.PlaceAdapter
 import com.example.android.iseebeer.data.Converter
 import com.example.android.iseebeer.data.database.PlaceDao
 import com.example.android.iseebeer.di.AppContext
+import com.example.android.iseebeer.di.module.AppModule
+import com.example.android.iseebeer.di.module.RoomModule
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.LocationServices
@@ -23,14 +25,20 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     val LOG_TAG: String = "MainActivity"
+
     val GOOGLE_API_CLIENT_ID: Int = 1
     val PLACE_PICKER_REQUEST: Int = 1001
 
     @Inject
     lateinit var placeDao: PlaceDao
 
-    lateinit var converter: Converter
+    @Inject
+    lateinit var room: RoomModule
 
+    @Inject
+    lateinit var appModule: AppModule
+
+    lateinit var convert: Converter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,10 +72,9 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, G
             placesRecyclerView.adapter = adapter
             places.add(place)
 
-            placeDao.insert(converter.fromPlace(place))
+            convert.fromPlace(place)?.let { placeDao.insert(it) }
 
             adapter.notifyDataSetChanged()
-
 
         } else {
             super.onActivityResult(requestCode, resultCode, data)
