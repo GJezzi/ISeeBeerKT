@@ -7,7 +7,7 @@ import io.reactivex.Flowable
 @Dao
 interface PlaceDao {
 
-    @Query("SELECT * FROM isb_database")
+    @Query("SELECT * FROM places")
     fun getPlaces(): Flowable<List<PlaceInfo>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
